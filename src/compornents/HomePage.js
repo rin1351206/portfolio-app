@@ -15,6 +15,7 @@ const HomePage = () => {
 
       <p>企業：株式会社ミロク情報サービス<br />
         所属：モバイルグループ
+        
         </p>
 
       <section class="page-section" id="services">
