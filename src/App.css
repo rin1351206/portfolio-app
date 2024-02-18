@@ -17,7 +17,7 @@ header {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background: black;
+  background: rgb(22, 201, 241);
   color: white;
   height: 90px;
   position: fixed;
