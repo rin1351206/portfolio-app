@@ -3,6 +3,7 @@ import reactImage from "../Images/react.png";
 import jsImage from "../Images/js.png";
 import firebaseImage from "../Images/firebase.jpg";
 import profileImage from "../Images/shiro.jpeg";
+import { Link } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -37,10 +38,12 @@ const HomePage = () => {
               </p>
             </div>
             <div class="col-md-4">
+              <Link to="/login">
               <span class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
                 <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
+              </Link>
               <h4 class="my-3">ログインフォーム</h4>
               <p class="text-muted">
                 
