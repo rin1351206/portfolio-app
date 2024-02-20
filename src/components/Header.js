@@ -3,6 +3,10 @@ import {Link} from "react-router-dom"
 
 const Header = () => {
 
+  function onClickSns () {
+    window.open("https://twitter.com/YouTube_Nobita_", '_brank');
+  }
+
   return (
     <header>
       <div className='logo'>
@@ -18,7 +22,7 @@ const Header = () => {
                 <Link to="/blog">ブログ</Link>
             </li>
             <li>
-                <Link to="/SNS">SNS</Link>
+                <a onClick={onClickSns}>SNS</a>
             </li>
         </ul>
       </nav>
