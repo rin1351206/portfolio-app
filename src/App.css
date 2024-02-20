@@ -91,7 +91,48 @@ img {
   margin-bottom: 100px;
 }
 
+<<<<<<< HEAD
 .fa-solid :hover{
   color: red;
 }
 
+=======
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ビューポートの高さに合わせて中央に配置 */
+}
+
+.login-form form {
+  width: 300px; /* フォームの幅 */
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつける */
+  border-radius: 8px; /* 角を丸くする */
+  background-color: var(--white-color); /* 背景色 */
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid var(--lightgray-color); /* 枠線 */
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--black-color); /* ボタンの背景色 */
+  color: var(--white-color); /* ボタンの文字色 */
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #48b4af; /* ホバー時の背景色 */
+}
+>>>>>>> origin/Windows
