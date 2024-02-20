@@ -4,7 +4,7 @@ import reactImage from "../Images/react.png";
 import jsImage from "../Images/js.png";
 import firebaseImage from "../Images/firebase.jpg";
 import profileImage from "../Images/shiro.jpeg";
-
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -28,11 +28,13 @@ const HomePage = () => {
           </div>
           <div class="row text-center">
             <div class="col-md-4">
+              <Link to="/todos">
               <span class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <i class="fa-solid fa-check fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 class="my-3">ECサイト</h4>
+              </Link>
+              <h4 class="my-3">Todo</h4>
               <p class="text-muted">
                 
               </p>
