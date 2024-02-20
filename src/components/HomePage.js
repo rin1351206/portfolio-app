@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import reactImage from "../Images/react.png";
 import jsImage from "../Images/js.png";
 import firebaseImage from "../Images/firebase.jpg";
@@ -11,7 +10,7 @@ const HomePage = () => {
     <div className="container text-center">
       <h1>Nomoto</h1>
 
-      <img src={profileImage} className="profileImage" />
+      <img src={profileImage} className="profileImage" alt='profileImage'/>
 
       <p>企業：株式会社ミロク情報サービ<br />
         所属：モバイルグループ
@@ -66,17 +65,17 @@ const HomePage = () => {
           <h1 class="title">スキル</h1>
           <div class="row text-center">
             <div class="col-md-4 services">
-              <img src={reactImage} />
+              <img src={reactImage} alt='react'/>
               <h4>React</h4>
               <p>Reactがつかえます</p>
             </div>
             <div class="col-md-4 services">
-              <img src={jsImage} />
+              <img src={jsImage} alt='js'/>
               <h4>HTML/CSS</h4>
               <p>HTML/CSSがつかえます</p>
             </div>
             <div class="col-md-4 services">
-              <img src={firebaseImage} />
+              <img src={firebaseImage} alt='firebase'/>
               <h4>Firebase</h4>
               <p>Firebaseがつかえます</p>
             </div>
