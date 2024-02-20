@@ -83,7 +83,6 @@ img {
   margin-bottom: 100px;
 }
 
-.fa-solid:hover {
-  color: red;
+#title {
+  text-decoration: none;
 }
-

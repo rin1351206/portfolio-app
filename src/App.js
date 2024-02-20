@@ -4,6 +4,7 @@ import Header from './components/Header';
 import HomePage from './components/HomePage';
 import TodosPage from './components/TodosPage';
 import TodoDetailPage from './components/TodoDetailPage';
+import LoginPage from './components/LoginPage';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path='/todos' element={<TodosPage />} />
         <Route path='/todos/:id' element={<TodoDetailPage />} />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
     </div>
     </Router>
