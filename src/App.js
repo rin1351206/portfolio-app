@@ -1,9 +1,9 @@
 import './App.css';
-import BlogPage from './compornents/BlogPage';
-import Header from './compornents/Header';
-import HomePage from './compornents/HomePage';
-import TodosPage from './compornents/TodosPage';
-import TodoDetailPage from './compornents/TodoDetailPage';
+import BlogPage from './components/BlogPage';
+import Header from './components/Header';
+import HomePage from './components/HomePage';
+import TodosPage from './components/TodosPage';
+import TodoDetailPage from './components/TodoDetailPage';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 function App() {
