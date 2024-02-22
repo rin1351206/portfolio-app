@@ -1,16 +1,19 @@
+import React,{useState} from 'react'
 import '../Todo.css'
-import React from 'react'
 import Title from './Title'
-import InputForm from './InputForm'
+import {InputForm} from './InputForm'
 import TodoList from './TodoList'
 
 
 function TodosPage() {
+
+  const [taskList, setTaskList] = useState([]);
+
   return (
     <div className='body'>
       <Title />
-      <InputForm />
-      <TodoList />
+      <InputForm taskList={taskList} setTaskList={setTaskList} />
+      <TodoList taskList={taskList} setTaskList={setTaskList}/>
     </div>
   )
 }
