@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const HomePage = () => {
   return (
     <div className="container text-center">
-      <h1>Nomoto</h1>
+      <h1>R.Nomoto</h1>
 
       <img src={profileImage} className="profileImage" />
 
