@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Title() {
+const Title = () => {
   return (
     <div>
-      
+      <h1 id='TodoListTitle'>TodoList</h1>
     </div>
   )
 }
