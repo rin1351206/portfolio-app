@@ -110,7 +110,7 @@ body {
 
 .input-form button {
   padding: 0.38rem 0.5rem;
-  background: rgb(243, 240, 84);
+  background: rgb(132, 222, 225);
 }
 
 .todoList {
@@ -160,3 +160,9 @@ button {
 .input-form{
   text-align: center;
 }
+
+#add-button {
+  margin-left: 10px;
+}
+
+

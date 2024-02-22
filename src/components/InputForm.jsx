@@ -9,7 +9,8 @@ export const InputForm = ({taskList, setTaskList}) => {
       ...taskList,
       {
         id: Date.now(), 
-        text: inputText
+        text: inputText,
+        completed: false
       }
     ]);
     setInputText("")
@@ -23,7 +24,7 @@ export const InputForm = ({taskList, setTaskList}) => {
     <div className='input-form'>
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={inputText}/>
-        <button type="submit">
+        <button type="submit" id='add-button'>
         <i className="fa-solid fa-plus"></i>
         </button>
       </form>
