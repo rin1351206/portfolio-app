@@ -19,36 +19,45 @@ function TodoList({ taskList, setTaskList }) {
 
     return (
         <div className='todo-list'>
-            <div className="todos">
-                <div className="todoHeader">
-                    <span className='todoDate'>作成日</span>
-                    <span className='todoText'>タスク名</span>
-                    <span className='todoStatus'>ステータス</span>
-                </div>
-            </div>
-            <div className="todos">
-                {taskList.map((task, index) => (
-                    <div className={`todo ${task.completed ? "completed" : ""}`} key={index}>
-                        <div className="todoDate">
-                            <span>{task.insertDate}</span>
-                        </div>
-                        <div className="todoText">
-                            <span>{task.text}</span>
-                        </div>
-                        <div className="icons">
-                            <button className="icon-button" onClick={() => handleComplete(task.id)}>
-                                <i className="fa-solid fa-check"></i>
-                            </button>
-                            <button className="icon-button" onClick={() => handleDelete(task.id)}>
-                                <i className="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <table className="table table-striped">
+                <thead>
+                    <tr className="todoHeader">
+                        <th></th>
+                        <th className='todoDate'>作成日</th>
+                        <th className='todoText'>タスク名</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {taskList.map((task, index) => (
+                        <tr className={`todo ${task.completed ? "completed" : ""}`} key={index}>
+                            <td className='todoAction'>
+                                <button className="icon-button" onClick={() => handleComplete(task.id)}>
+                                    <i className="fa-solid fa-check"></i>
+                                </button>
+                            </td>
+                            <td className="todoDate">
+                                <span>{task.insertDate}</span>
+                            </td>
+                            <td className="todoText">
+                                <span>{task.text}</span>
+                            </td>
+                            <td className="todoAction">
+                                <button className="icon-button" onClick={() => handleDelete(task.id)}>
+                                    <i className="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                            <td className="todoPriority">
+                                <span>{task.priority}</span>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }
 
 export default TodoList;
+
 
