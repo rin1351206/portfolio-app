@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import '../Todo.css'
 import Title from './Title'
 import {InputForm} from './InputForm'
 import TodoList from './TodoList'

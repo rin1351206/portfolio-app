@@ -5,15 +5,19 @@ export const InputForm = ({taskList, setTaskList}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTaskList([
-      ...taskList,
-      {
-        id: Date.now(), 
-        text: inputText,
-        completed: false
-      }
-    ]);
-    setInputText("")
+    
+    if (inputText !== "") {
+      setTaskList([
+        ...taskList,
+        {
+          id: Date.now(),
+          insertDate: new Date().toLocaleDateString(),
+          text: inputText,
+          completed: false
+        }
+      ]);
+      setInputText("")
+    }
   }
 
   const handleChange  = (e) => {
@@ -31,6 +35,7 @@ export const InputForm = ({taskList, setTaskList}) => {
     </div>
   )
 }
+
 
 
 

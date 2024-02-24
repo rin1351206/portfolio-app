@@ -118,7 +118,7 @@ body {
   margin: 2rem auto;
 }
 
-.todo {
+.todo , .todoHeader {
   margin: 0.4rem;
   display: flex;
   align-items: center;

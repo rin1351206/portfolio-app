@@ -20,8 +20,18 @@ function TodoList({ taskList, setTaskList }) {
     return (
         <div className='todo-list'>
             <div className="todos">
+                <div className="todoHeader">
+                    <span className='todoDate'>作成日</span>
+                    <span className='todoText'>タスク名</span>
+                    <span className='todoStatus'>ステータス</span>
+                </div>
+            </div>
+            <div className="todos">
                 {taskList.map((task, index) => (
                     <div className={`todo ${task.completed ? "completed" : ""}`} key={index}>
+                        <div className="todoDate">
+                            <span>{task.insertDate}</span>
+                        </div>
                         <div className="todoText">
                             <span>{task.text}</span>
                         </div>
@@ -41,3 +51,4 @@ function TodoList({ taskList, setTaskList }) {
 }
 
 export default TodoList;
+
