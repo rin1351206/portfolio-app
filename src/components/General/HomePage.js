@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import reactImage from "../Images/react.png";
-import jsImage from "../Images/js.png";
-import firebaseImage from "../Images/firebase.jpg";
-import profileImage from "../Images/shiro.jpeg";
+import reactImage from "../../Images/react.png";
+import jsImage from "../../Images/js.png";
+import firebaseImage from "../../Images/firebase.jpg";
+import profileImage from "../../Images/shiro.jpeg";
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
@@ -36,7 +36,6 @@ const HomePage = () => {
               </Link>
               <h4 class="my-3">Todo</h4>
               <p class="text-muted">
-                
               </p>
             </div>
             <div class="col-md-4">
@@ -49,16 +48,6 @@ const HomePage = () => {
               <h4 class="my-3">ログインフォーム</h4>
               <p class="text-muted">
                 
-              </p>
-            </div>
-            <div class="col-md-4">
-              <span class="fa-stack fa-4x">
-                <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 class="my-3">ウェブセキュリティ</h4>
-              <p class="text-muted">
-            
               </p>
             </div>
           </div>

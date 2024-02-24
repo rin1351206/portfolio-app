@@ -118,7 +118,7 @@ body {
   margin: 2rem auto;
 }
 
-.todo {
+.todo-list {
   margin: 0.4rem;
   display: flex;
   align-items: center;
@@ -163,6 +163,11 @@ button {
 
 #add-button {
   margin-left: 10px;
+}
+
+.fa-solid fa-trash {
+  padding-left: 1330px;
+  padding-right: 1330px;
 }
 
 

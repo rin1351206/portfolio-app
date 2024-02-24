@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 const Header = () => {
 
   function onClickSns () {
-    window.open("https://twitter.com/YouTube_Nobita_", '_brank');
+    window.open("https://twitter.com/mirokujyoho", '_brank');
   }
 
   return (
@@ -22,7 +22,7 @@ const Header = () => {
                 <Link to="/blog">ブログ</Link>
             </li>
             <li>
-                <a onClick={onClickSns}>SNS</a>
+                <Link onClick={onClickSns}>SNS</Link>
             </li>
         </ul>
       </nav>
