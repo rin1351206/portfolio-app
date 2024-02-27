@@ -1,4 +1,11 @@
 import React, {useState} from 'react'
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 export const InputForm = ({taskList, setTaskList}) => {
   const [inputText, setInputText] = useState("");
@@ -27,12 +34,12 @@ export const InputForm = ({taskList, setTaskList}) => {
   return (
     <div className='input-form'>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={inputText}/>
-        <button type="submit" id='add-button'>
-        <i className="fa-solid fa-plus"></i>
-        </button>
+        <TextField id="outlined-basic" label="タスク名" variant="outlined" onChange={handleChange} value={inputText} size='small' className='input-text' style={{marginRight: '10px'}}/>
+        <Button type='submit' variant="outlined" className='add-btn' style={{marginLeft: '10px'}}>追加</Button>
       </form>
     </div>
+
+    
   )
 }
 

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Button, TextField, Dialog, Checkbox, FormControlLabel } from '@mui/material';
+import '../../App.css';
 
 function TodoList({ taskList, setTaskList }) {
     const handleDelete = (id) => {
@@ -19,7 +21,7 @@ function TodoList({ taskList, setTaskList }) {
 
     return (
         <div className='todo-list'>
-            <table className="table table-striped">
+            <table className="table table-striped" >
                 <thead>
                     <tr className="todoHeader">
                         <th></th>
@@ -32,9 +34,10 @@ function TodoList({ taskList, setTaskList }) {
                     {taskList.map((task, index) => (
                         <tr className={`todo ${task.completed ? "completed" : ""}`} key={index}>
                             <td className='todoAction'>
-                                <button className="icon-button" onClick={() => handleComplete(task.id)}>
-                                    <i className="fa-solid fa-check"></i>
-                                </button>
+                            <Checkbox
+                              sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+                              onChange={() => handleComplete(task.id)}
+                            />
                             </td>
                             <td className="todoDate">
                                 <span>{task.insertDate}</span>
