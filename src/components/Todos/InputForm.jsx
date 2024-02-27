@@ -1,11 +1,7 @@
 import React, {useState} from 'react'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+
 
 export const InputForm = ({taskList, setTaskList}) => {
   const [inputText, setInputText] = useState("");
@@ -38,8 +34,6 @@ export const InputForm = ({taskList, setTaskList}) => {
         <Button type='submit' variant="outlined" className='add-btn' style={{marginLeft: '10px'}}>追加</Button>
       </form>
     </div>
-
-    
   )
 }
 

@@ -160,10 +160,11 @@ button {
   padding-right: 1330px;
 }
 
-.table{
-  width: 70%;
-  margin: 0 auto;
+#todocontent{
+  vertical-align: middle;
 }
+
+
 
 
 

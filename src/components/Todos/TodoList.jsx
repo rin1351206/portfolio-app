@@ -21,12 +21,13 @@ function TodoList({ taskList, setTaskList }) {
 
     return (
         <div className='todo-list'>
-            <table className="table table-striped" >
+            <table className="table table-striped" style={{width: '70%', margin: 'auto'}} >
                 <thead>
                     <tr className="todoHeader">
                         <th></th>
                         <th className='todoDate'>作成日</th>
                         <th className='todoText'>タスク名</th>
+                        <th className='todoPrimary'>優先度</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -39,19 +40,19 @@ function TodoList({ taskList, setTaskList }) {
                               onChange={() => handleComplete(task.id)}
                             />
                             </td>
-                            <td className="todoDate">
+                            <td className="todoDate" id='todocontent'>
                                 <span>{task.insertDate}</span>
                             </td>
-                            <td className="todoText">
+                            <td className="todoText" id='todocontent'>
                                 <span>{task.text}</span>
                             </td>
-                            <td className="todoAction">
+                            <td className="todoPriority" id='todocontent'>
+                                <span>{task.priority}</span>
+                            </td>
+                            <td className="todoAction" id='todocontent'>
                                 <button className="icon-button" onClick={() => handleDelete(task.id)}>
                                     <i className="fa-solid fa-trash"></i>
                                 </button>
-                            </td>
-                            <td className="todoPriority">
-                                <span>{task.priority}</span>
                             </td>
                         </tr>
                     ))}
