@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 
 export const InputForm = ({taskList, setTaskList}) => {
   const [inputText, setInputText] = useState('');
+  const [deadline, setDeadline] = useState('');
   const [error, setError] = useState(false);
   const [helperText, setHelperText] = useState('');
 
@@ -15,12 +16,13 @@ export const InputForm = ({taskList, setTaskList}) => {
         ...taskList,
         {
           id: Date.now(),
-          insertDate: new Date().toLocaleDateString(),
+          deadline: deadline,
           text: inputText,
           completed: false
         }
       ]);
       setInputText("");
+      setDeadline("");
       setError(false);
       setHelperText('');
     } else if (inputText.length > 20) {
@@ -32,12 +34,16 @@ export const InputForm = ({taskList, setTaskList}) => {
     }
   }
 
-  const handleChange  = (e) => {
+  const handleChangeText  = (e) => {
     setInputText(e.target.value);
     if(e.target.value.length <= 20){
       setError(false);
       setHelperText('');
     }
+  }
+
+  const handleChangeDeadline = (e) => {
+    setDeadline(e.target.value);
   }
 
   return (
@@ -46,14 +52,26 @@ export const InputForm = ({taskList, setTaskList}) => {
         
         <TextField 
           error={error}
-          id="filled-basic" 
+          id="task-name" 
           label="タスク名"
           variant="filled" 
           helperText={helperText}
-          onChange={handleChange} 
+          onChange={handleChangeText} 
           value={inputText} 
           className='input-text' 
           style={{marginRight: '10px'}}
+        />
+        <TextField 
+          id="deadline" 
+          label="期限日"
+          type="date"
+          onChange={handleChangeDeadline} 
+          value={deadline} 
+          className='input-text' 
+          style={{marginRight: '10px'}}
+          InputLabelProps={{
+            shrink: true,
+          }}
         />
         <Button type='submit' variant="outlined" size="large" className='add-btn' style={{marginLeft: '10px', marginTop: '10px'}}>追加</Button>
       </form>
