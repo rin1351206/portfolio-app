@@ -21,7 +21,7 @@ function TodoList({ taskList, setTaskList }) {
 
     return (
         <div className='todo-list'>
-            <table className="table table-striped" style={{width: '70%', margin: 'auto'}} >
+            <table className="table table-striped" style={{width: '70%', margin: 'auto', marginTop: '20px', position: 'relative'}} >
                 <thead>
                     <tr className="todoHeader">
                         <th></th>
@@ -36,8 +36,8 @@ function TodoList({ taskList, setTaskList }) {
                         <tr className={`todo ${task.completed ? "completed" : ""}`} key={index}>
                             <td className='todoAction'>
                             <Checkbox
-                              sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
-                              onChange={() => handleComplete(task.id)}
+                                sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+                                onChange={() => handleComplete(task.id)}
                             />
                             </td>
                             <td className="todoDate" id='todocontent'>
