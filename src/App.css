@@ -94,18 +94,8 @@ body {
   height: 100vh;
 }
 
-.inputForm {
-  width: 80vh;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-}
-
-.inputForm input {
-  width: 15rem;
-  height: 1.7rem;
-  padding: 0.5rem;
-  border: none;
+.input-form{
+  min-height: 80px;
 }
 
 .todoList {
