@@ -21,9 +21,8 @@ const HomePage = () => {
       <section class="page-section" id="services">
         <div className="service">
           <div class="text-center">
-            <h2 class="section-heading text-uppercase">PORTFOLIO</h2>
             <h3 class="section-subheading text-muted mb-5">
-              個人学習作品
+              個人学習一覧
             </h3>
           </div>
           <div class="row text-center">
