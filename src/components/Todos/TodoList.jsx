@@ -21,33 +21,37 @@ function TodoList({ taskList, setTaskList }) {
 
     return (
         <div className='todo-list'>
-            <table className="table table-striped" style={{width: '70%', margin: 'auto', marginTop: '20px', position: 'relative'}} >
+            <table className="table table-striped" style={{width: '70%', margin: 'auto', position: 'relative'}} >
                 <thead>
                     <tr className="todoHeader">
-                        <th></th>
-                        <th className='todoDate'>作成日</th>
+                        <th className='checkBox'>済</th>
+                        <th className='todoDate'>期限日</th>
                         <th className='todoText'>タスク名</th>
                         <th className='todoPrimary'>優先度</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {taskList.map((task, index) => (
-                        <tr className={`todo ${task.completed ? "completed" : ""}`} key={index}>
-                            <td className='todoAction'>
-                            <Checkbox
+                    {taskList.map((task) => (
+                        <tr className={`todo ${task.completed ? "completed" : ""}`} key={task.id}>
+                            <td className='checkBox'>
+                            <Checkbox 
+                                checked={task.completed}
                                 sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
                                 onChange={() => handleComplete(task.id)}
                             />
                             </td>
                             <td className="todoDate" id='todocontent'>
-                                <span>{task.insertDate}</span>
+                                <span>{task.deadline}</span>
                             </td>
                             <td className="todoText" id='todocontent'>
                                 <span>{task.text}</span>
                             </td>
                             <td className="todoPriority" id='todocontent'>
                                 <span>{task.priority}</span>
+                            </td>
+                            <td>
+                                
                             </td>
                             <td className="todoAction" id='todocontent'>
                                 <button className="icon-button" onClick={() => handleDelete(task.id)}>
