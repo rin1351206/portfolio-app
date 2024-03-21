@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header>
       <div className='logo'>
-        <Link to="/" id='title'><h3>目標管理シート用</h3></Link>
+        <Link to="/" id='title'><h3>47期</h3></Link>
       </div>
 
       <nav>
