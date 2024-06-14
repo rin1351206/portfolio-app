@@ -1,5 +1,4 @@
 import './App.css';
-import BlogPage from './components/General/BlogPage';
 import Header from './components/General/Header';
 import HomePage from './components/General/HomePage';
 import TodosPage from './components/Todos/TodosPage';
@@ -13,7 +12,6 @@ function App() {
         
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/blog" element={<BlogPage />} />
         <Route path='/todos' element={<TodosPage />} />
       </Routes>
     </div>

@@ -89,7 +89,7 @@ export const InputForm = ({taskList, setTaskList}) => {
   return (
     <div className='input-form' style={{height:'100px'}}>
       <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', padding: '20px'}}>
-        <div style={{margin:'5px', verticalalign: 'middle'}}>
+        <div style={{margin:'5px', verticalAlign: 'middle'}}>
       <TextField 
           error={Derror}
           id="deadline" 
