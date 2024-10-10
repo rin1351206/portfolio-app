@@ -7,6 +7,7 @@ app = FastAPI()
 # 通信するURL設定
 origins = [
     "http://localhost:3000",
+    "https://portfolio-app-red-psi.vercel.app/",
 ]
 
 # セキュリティ対策
