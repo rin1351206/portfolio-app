@@ -22,13 +22,13 @@ const HomePage = () => {
               </p>
             </div>
             <div class="col-md-4">
-              <Link to="/login">
+              <Link to="/weather">
               <span class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                <i class="fa-solid fa-sun fa-stack-1x fa-inverse"></i>
               </span>
               </Link>
-              <h4 class="my-3">ログインフォーム</h4>
+              <h4 class="my-3">天気</h4>
               <p class="text-muted">
               </p>
             </div>
