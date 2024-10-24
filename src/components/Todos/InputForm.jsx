@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import axios from 'axios';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -19,29 +20,33 @@ export const InputForm = ({taskList, setTaskList}) => {
   const [DhelperText, setDhelperText] = useState('');
   const [PhelperText, setPhelperText] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (inputText !== "" && inputText.length <= 20 && deadline !== "" && priority !== "") {
-      setTaskList([
-        ...taskList,
-        {
-          id: Date.now(),
-          completed: false,
-          deadline: deadline,
+      try {
+        const response = await axios.post('http://localhost:8000/todos', {
           text: inputText,
-          priority: priority
-        }
-      ]);
-      setInputText("");
-      setDeadline("");
-      setPriority(''); 
-      setTerror(false);
-      setDerror(false);
-      setPerror(false);
-      setThelperText('');
-      setDhelperText('');
-      setPhelperText('');
+          deadline: deadline,
+          priority: priority,
+          completed: false
+        });
+        setTaskList([
+          ...taskList,
+          response.data
+        ]);
+        setInputText("");
+        setDeadline("");
+        setPriority(''); 
+        setTerror(false);
+        setDerror(false);
+        setPerror(false);
+        setThelperText('');
+        setDhelperText('');
+        setPhelperText('');
+      } catch (error) {
+        console.error('Error creating todo:', error);
+      }
     } else if (inputText.length > 20) {
       setTerror(true);
       setThelperText('20文字以内で入力してください。');

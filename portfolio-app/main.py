@@ -1,5 +1,7 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import List, Optional
 
 # インスタンス化する決まり文句
 app = FastAPI()
@@ -19,6 +21,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class TodoItem(BaseModel):
+    id: Optional[int]
+    text: str
+    deadline: str
+    priority: str
+    completed: bool
+
+todos = []
+
 @app.post("/weather/test")
 async def test(request: Request):
     data = await request.json()
@@ -26,5 +37,38 @@ async def test(request: Request):
     dataB = data.get("dataB",0)
     answer = int(dataA) + int(dataB)
     return {"answer":answer}
+
+@app.post("/todos")
+async def create_todo(todo: TodoItem):
+    todo.id = len(todos) + 1
+    todos.append(todo)
+    return todo
+
+@app.get("/todos")
+async def get_todos():
+    return todos
+
+@app.get("/todos/{todo_id}")
+async def get_todo(todo_id: int):
+    for todo in todos:
+        if todo.id == todo_id:
+            return todo
+    raise HTTPException(status_code=404, detail="Todo not found")
+
+@app.put("/todos/{todo_id}")
+async def update_todo(todo_id: int, updated_todo: TodoItem):
+    for index, todo in enumerate(todos):
+        if todo.id == todo_id:
+            todos[index] = updated_todo
+            return updated_todo
+    raise HTTPException(status_code=404, detail="Todo not found")
+
+@app.delete("/todos/{todo_id}")
+async def delete_todo(todo_id: int):
+    for index, todo in enumerate(todos):
+        if todo.id == todo_id:
+            del todos[index]
+            return {"message": "Todo deleted"}
+    raise HTTPException(status_code=404, detail="Todo not found")
 
 # uvicorn main:app --reload

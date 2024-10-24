@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
 import { Button, TextField, Modal, Checkbox, FormControlLabel } from '@mui/material';
+import axios from 'axios';
 import '../../App.css';
 
 function TodoList({ taskList, setTaskList }) {
     const [open, setOpen] = useState(false);
     const [selectedTasks, setSelectedTasks] = useState([]);
 
-    const handleDelete = (id) => {
-        setTaskList(taskList.filter((task) => task.id !== id));
+    const handleDelete = async (id) => {
+        try {
+            await axios.delete(`http://localhost:8000/todos/${id}`);
+            setTaskList(taskList.filter((task) => task.id !== id));
+        } catch (error) {
+            console.error('Error deleting todo:', error);
+        }
     };
 
-    const handleComplete = (id) => {
-        setTaskList(taskList.map((task) => {
-            if (id === task.id) {
-                return {
-                    ...task,
-                    completed: !task.completed
-                };
+    const handleComplete = async (id) => {
+        const taskToUpdate = taskList.find((task) => task.id === id);
+        if (taskToUpdate) {
+            const updatedTask = { ...taskToUpdate, completed: !taskToUpdate.completed };
+            try {
+                const response = await axios.put(`http://localhost:8000/todos/${id}`, updatedTask);
+                setTaskList(taskList.map((task) => (task.id === id ? response.data : task)));
+            } catch (error) {
+                console.error('Error updating todo:', error);
             }
-            return task;
-        }));
+        }
     };
 
     const handleProgressChange = (id, event) => {
@@ -126,7 +133,3 @@ function TodoList({ taskList, setTaskList }) {
 }
 
 export default TodoList;
-
-
-
-
